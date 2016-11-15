@@ -1,0 +1,39 @@
+{
+  "name": "asset-pipe-sink-mem",
+  "version": "1.0.0-alpha.1",
+  "author": {
+    "name": "Trygve Lie",
+    "email": "post@trygve-lie.com"
+  },
+  "description": "Module for writing and reading asset feeds and js/css bundles to and from a simple in memory store",
+  "main": "./lib/sink.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:asset-pipe/asset-pipe-sink-mem.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "contributors": [
+    {
+      "name": "Trygve Lie",
+      "email": "post@trygve-lie.com"
+    }
+  ],
+  "engines": {
+    "node" : "6.x"
+  },
+  "bugs": {
+    "url": "https://github.com/asset-pipe/asset-pipe-sink-mem/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "readable-stream": "2.2.2"
+  },
+  "devDependencies": {
+    "tap": "8.0.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  }
+}
