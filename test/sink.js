@@ -1,7 +1,8 @@
 "use strict";
 
 const stream = require('stream');
-const sink = require('../');
+const concat = require('concat-stream');
+const Sink = require('../');
 const tap = require('tap');
 
 
@@ -17,14 +18,20 @@ const sourceStream = (arr) => {
     });
 }
 
-const sourceArray = [a,b,c];
+const a = ['a','b','c'];
+const b = ['d', 'a','b','c'];
 
 
-tap.test('foo', (t) => {
-    sourceStream(sourceArray).pipe(compare([], 'uuid', compareFunction)).pipe(concat((result) => {
-        t.similar(result[0], {appended : sourceArray[0]});
-        t.similar(result[1], {appended : sourceArray[1]});
-        t.similar(result[2], {appended : sourceArray[2]});
-        t.end();
+tap.test('not a real test', (t) => {
+    const sink = new Sink;
+    sourceStream(a).pipe(sink.writer('js', (name) => {
+        console.log(name);
+
+        sink.reader(name).pipe(concat((m) => {
+            console.log(m.toString());
+            t.end();
+        }));
+
     }));
+
 });
