@@ -32,7 +32,7 @@
     "concat-stream": "1.5.2"
   },
   "devDependencies": {
-    "tap": "8.0.0"
+    "tap": "8.0.1"
   },
   "scripts": {
     "test": "tap test/*.js"
