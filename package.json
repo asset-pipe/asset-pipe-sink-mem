@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "readable-stream": "2.2.2",
-    "concat-stream": "1.5.2"
+    "concat-stream": "1.6.0"
   },
   "devDependencies": {
     "tap": "8.0.1"
