@@ -28,7 +28,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "readable-stream": "2.2.6",
+    "readable-stream": "2.2.7",
     "concat-stream": "1.6.0"
   },
   "devDependencies": {
