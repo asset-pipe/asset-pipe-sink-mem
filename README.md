@@ -25,7 +25,7 @@ Read an asset feed from the store and serve it on http:
 
 ```js
 const express = require('express');
-const Sink = require('asset-pipe-sink-fs');
+const Sink = require('asset-pipe-sink-mem');
 
 const app = express();
 const sink = new Sink();
