@@ -79,7 +79,7 @@ Supported arguments are:
 
 Events:
 
- - `file found` - When the file we want to read is found. Emits with: `file`
+ - `file found` - When the file we want to read is found. Emits with: `file`.
  - `file not saved` -  When the file we want to read is not found. Emits with: `file`.
 
 
