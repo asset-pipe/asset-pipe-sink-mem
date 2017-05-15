@@ -1,5 +1,7 @@
 # asset-pipe-sink-mem
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/asset-pipe/asset-pipe-sink-mem.svg)](https://greenkeeper.io/)
+
 A [asset-pipe][asset-pipe] sink for writing and reading asset feeds and js/css bundles to and from a
 simple in memory store.
 
