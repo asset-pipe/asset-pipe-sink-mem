@@ -4,6 +4,39 @@ const stream = require('readable-stream');
 const Sink = require('../');
 const fs = require('fs');
 
+test('.get() - non value should return null', async () => {
+    const sink = new Sink();
+
+    expect(await sink.get('some-key')).toBe(null);
+});
+
+test('.set() - should set value', async () => {
+    const sink = new Sink();
+
+    expect(await sink.set('some-key-1', 'value-1')).toBe(true);
+    expect(await sink.get('some-key-1')).toBe('value-1');
+});
+
+test('.set() - should not set value if missing value', async () => {
+    const sink = new Sink();
+
+    expect(await sink.set('some-key-1')).toBe(false);
+    expect(await sink.get('some-key-1')).toBe(null);
+});
+
+test('.has() - should return false if value not present', async () => {
+    const sink = new Sink();
+
+    expect(await sink.has('some-key-1')).toBe(false);
+});
+
+test('.has() - should return true if value present', async () => {
+    const sink = new Sink();
+
+    expect(await sink.set('some-key-1', 'value-1')).toBe(true);
+    expect(await sink.has('some-key-1')).toBe(true);
+});
+
 test('.writer() - no value for "type" argument - should throw', () => {
     const sink = new Sink();
     expect(() => {
