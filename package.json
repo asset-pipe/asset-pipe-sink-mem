@@ -31,20 +31,34 @@
     "concat-stream": "1.6.0"
   },
   "devDependencies": {
-    "eslint": "^4.1.1",
+    "eslint": "^4.9.0",
     "eslint-config-finn": "^3.0.0",
+    "eslint-config-finn-prettier": "^3.0.1",
+    "jest": "^21.2.1",
+    "prettier": "^1.8.1",
     "tap": "10.7.2",
     "semantic-release": "^8.2.0"
   },
   "scripts": {
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "lint": "eslint .",
-    "test": "tap --jobs=4 test/*.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "test": "jest"
   },
   "files": [
     "lib"
   ],
   "publishConfig": {
     "access": "restricted"
+  },
+  "jest": {
+    "clearMocks": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   }
 }
