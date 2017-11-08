@@ -56,6 +56,19 @@ This module have the following API:
 
 Constructor takes no arguments.
 
+
+### get(key)
+
+Async method for reading a file from memory
+
+### set(key, value)
+
+Async method for writing to file in memory
+
+### has(key)
+
+Async method for checking if file exist
+
 ### writer(type)
 
 Method for writing a file to memory. Returns a write stream.
