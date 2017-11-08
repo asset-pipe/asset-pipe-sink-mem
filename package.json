@@ -1,25 +1,25 @@
 {
   "name": "asset-pipe-sink-mem",
   "version": "1.0.0-beta.5",
-  "author": {
-    "name": "Trygve Lie",
-    "email": "post@trygve-lie.com"
-  },
+  "author": "Trygve Lie <post@trygve-lie.com>",
   "description": "Module for writing and reading asset feeds and js/css bundles to and from a simple in memory store",
   "main": "./lib/sink.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:asset-pipe/asset-pipe-sink-mem.git"
+    "url": "https://github.com/asset-pipe/asset-pipe-sink-mem.git"
   },
   "keywords": [
     "test"
   ],
   "contributors": [
-    {
-      "name": "Trygve Lie",
-      "email": "post@trygve-lie.com"
-    }
+    "Trygve Lie <post@trygve-lie.com>",
+    "Trygve Lie (http://www.trygve-lie.com/)",
+    "Greenkeeper (http://greenkeeper.io/)",
+    "Richard Walker (https://github.com/digitalsadhu)"
   ],
+  "engines": {
+    "node": ">=8"
+  },
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-sink-mem/issues"
   },
@@ -31,15 +31,62 @@
     "concat-stream": "1.6.0"
   },
   "devDependencies": {
-    "eslint": "^4.1.1",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.10.0",
     "eslint-config-finn": "^3.0.0",
-    "tap": "10.7.2"
+    "eslint-config-finn-prettier": "^3.0.1",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.3.0",
+    "prettier": "^1.8.1",
+    "projectz": "^1.4.0"
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "tap --jobs=4 test/*.js"
+    "test": "jest --coverage",
+    "lint:format": "eslint --fix .",
+    "precommit": "lint-staged",
+    "cm": "git-cz",
+    "readme": "projectz compile"
   },
   "files": [
     "lib"
-  ]
+  ],
+  "jest": {
+    "clearMocks": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --config ./.eslintrc",
+      "git add"
+    ],
+    "{package.json,README.md,LICENSE.md}": [
+      "projectz compile",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "badges": {
+    "list": [
+      "travisci",
+      "npmversion",
+      "daviddm",
+      "daviddmdev"
+    ]
+  },
+  "maintainers": []
 }
