@@ -20,6 +20,9 @@
       "email": "post@trygve-lie.com"
     }
   ],
+  "engines": {
+    "node": ">=8"
+  },
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-sink-mem/issues"
   },
