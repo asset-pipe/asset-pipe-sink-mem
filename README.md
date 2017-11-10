@@ -71,6 +71,20 @@ This module have the following API:
 
 Constructor takes no arguments.
 
+
+### get(fileName: string): Promise<string>
+
+Async method for reading a file from storage
+
+### set(fileName: string, fileContent: string): Promise<void>
+
+Async method for writing file to storage
+
+### has(fileName: string): Promise<Boolean>
+
+Async method for checking if file exist in storage
+
+
 ### writer(type)
 
 Method for writing a file to memory. Returns a write stream.

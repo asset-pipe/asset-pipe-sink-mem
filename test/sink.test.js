@@ -4,10 +4,55 @@ const stream = require('readable-stream');
 const Sink = require('../');
 const fs = require('fs');
 
+test('.get() - non value should error', async () => {
+    const sink = new Sink();
+
+    expect(sink.get('some-key')).rejects.toEqual(
+        new Error('No file with some-key')
+    );
+});
+
+test('.set() - should set value', async () => {
+    const sink = new Sink();
+
+    await sink.set('some-key-1', 'value-1');
+    expect(await sink.get('some-key-1')).toBe('value-1');
+});
+
+test('.set() - should not set value if missing value', async () => {
+    expect.assertions(2);
+    const sink = new Sink();
+
+    try {
+        await sink.set('some-key-1');
+    } catch (e) {
+        expect(e).toMatchSnapshot();
+    }
+
+    try {
+        await sink.get('some-key-1');
+    } catch (e) {
+        expect(e).toMatchSnapshot();
+    }
+});
+
+test('.has() - should return false if value not present', async () => {
+    const sink = new Sink();
+
+    expect(await sink.has('some-key-1')).toBe(false);
+});
+
+test('.has() - should return true if value present', async () => {
+    const sink = new Sink();
+
+    await sink.set('some-key-1', 'value-1');
+    expect(await sink.has('some-key-1')).toBe(true);
+});
+
 test('.writer() - no value for "type" argument - should throw', () => {
     const sink = new Sink();
     expect(() => {
-        const dest = sink.writer(); // eslint-disable-line
+        sink.writer();
     }).toThrowError('"type" is missing');
 });
 
@@ -36,7 +81,7 @@ test('.writer() - on "file saved" - should have "id" and "file" on emitted event
 test('.reader() - no value for "file" argument - should throw', () => {
     const sink = new Sink();
     expect(() => {
-        const source = sink.reader(); // eslint-disable-line
+        sink.reader();
     }).toThrowError('"file" is missing');
 });
 

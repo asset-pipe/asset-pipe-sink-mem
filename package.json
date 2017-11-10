@@ -18,6 +18,9 @@
     "Richard Walker (https://github.com/digitalsadhu)",
     "Sveinung Røsaker (https://github.com/sveisvei)"
   ],
+  "engines": {
+    "node": ">=8"
+  },
   "bugs": {
     "url": "https://github.com/asset-pipe/asset-pipe-sink-mem/issues"
   },
