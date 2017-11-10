@@ -1,6 +1,6 @@
 <!-- TITLE/ -->
 
-<h1>asset-pipe-sink-mem</h1>
+<h1>@asset-pipe/sink-mem</h1>
 
 <!-- /TITLE -->
 
@@ -8,7 +8,7 @@
 <!-- BADGES/ -->
 
 <span class="badge-travisci"><a href="http://travis-ci.org/asset-pipe/asset-pipe-sink-mem" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/asset-pipe/asset-pipe-sink-mem/master.svg" alt="Travis CI Build Status" /></a></span>
-<span class="badge-npmversion"><a href="https://npmjs.org/package/asset-pipe-sink-mem" title="View this project on NPM"><img src="https://img.shields.io/npm/v/asset-pipe-sink-mem.svg" alt="NPM version" /></a></span>
+<span class="badge-npmversion"><a href="https://npmjs.org/package/@asset-pipe/sink-mem" title="View this project on NPM"><img src="https://img.shields.io/npm/v/@asset-pipe/sink-mem.svg" alt="NPM version" /></a></span>
 <span class="badge-daviddm"><a href="https://david-dm.org/asset-pipe/asset-pipe-sink-mem" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/asset-pipe/asset-pipe-sink-mem.svg" alt="Dependency Status" /></a></span>
 <span class="badge-daviddmdev"><a href="https://david-dm.org/asset-pipe/asset-pipe-sink-mem#info=devDependencies" title="View the status of this project's development dependencies on DavidDM"><img src="https://img.shields.io/david/dev/asset-pipe/asset-pipe-sink-mem.svg" alt="Dev Dependency Status" /></a></span>
 
@@ -31,7 +31,7 @@ These sinks are normally used by the [asset-pipe-build-server][asset-pipe-build-
 ## Installation
 
 ```bash
-$ npm install asset-pipe-sink-mem
+$ npm install @asset-pipe/sink-mem
 ```
 
 
@@ -42,7 +42,7 @@ Read an asset feed from the store and serve it on http:
 
 ```js
 const express = require('express');
-const Sink = require('asset-pipe-sink-mem');
+const Sink = require('@asset-pipe/sink-mem');
 
 const app = express();
 const sink = new Sink();
