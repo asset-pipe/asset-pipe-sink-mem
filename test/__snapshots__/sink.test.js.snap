@@ -2,4 +2,4 @@
 
 exports[`.set() - should not set value if missing value 1`] = `[AssertionError [ERR_ASSERTION]: "fileContent" is missing]`;
 
-exports[`.set() - should not set value if missing value 2`] = `[Error: No file with some-key-1]`;
+exports[`.set() - should not set value if missing value 2`] = `[Error: No file with name "some-key-1"]`;

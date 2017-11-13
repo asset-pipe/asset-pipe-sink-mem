@@ -8,7 +8,7 @@ test('.get() - non value should error', async () => {
     const sink = new Sink();
 
     expect(sink.get('some-key')).rejects.toEqual(
-        new Error('No file with some-key')
+        new Error('No file with name "some-key"')
     );
 });
 
