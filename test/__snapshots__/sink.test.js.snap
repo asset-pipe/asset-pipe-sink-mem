@@ -3,3 +3,48 @@
 exports[`.set() - should not set value if missing value 1`] = `[AssertionError [ERR_ASSERTION]: "fileContent" is missing]`;
 
 exports[`.set() - should not set value if missing value 2`] = `[Error: No file with name "some-key-1"]`;
+
+exports[`dir() - should error when folder does not exist 1`] = `"Missing folder with name \\"/dir/missing\\" or empty result"`;
+
+exports[`dir() - should list 1 file from a directory 1`] = `
+Array [
+  Object {
+    "content": "value-1",
+    "fileName": "some-key-1",
+  },
+]
+`;
+
+exports[`dir() - should list 3 files from a directory 1`] = `
+Array [
+  Object {
+    "content": "value-1",
+    "fileName": "some-key-1",
+  },
+  Object {
+    "content": "value-1",
+    "fileName": "some-key-2",
+  },
+  Object {
+    "content": "value-1",
+    "fileName": "some-key-3",
+  },
+]
+`;
+
+exports[`dir() - should list 3 files from a sub directory 1`] = `
+Array [
+  Object {
+    "content": "wanted-1",
+    "fileName": "dir/sub/some-key-1",
+  },
+  Object {
+    "content": "wanted-2",
+    "fileName": "dir/sub/some-key-2",
+  },
+  Object {
+    "content": "wanted-3",
+    "fileName": "dir/sub/some-key-3",
+  },
+]
+`;
