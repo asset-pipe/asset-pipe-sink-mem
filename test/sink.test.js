@@ -49,6 +49,49 @@ test('.has() - should return true if value present', async () => {
     expect(await sink.has('some-key-1')).toBe(true);
 });
 
+test('dir() - should list 1 file from a directory', async () => {
+    const sink = new Sink();
+
+    await sink.set('some-key-1', 'value-1');
+    expect(await sink.dir('/')).toMatchSnapshot();
+});
+
+test('dir() - should list 3 files from a directory', async () => {
+    const sink = new Sink();
+
+    await sink.set('some-key-1', 'value-1');
+    await sink.set('some-key-2', 'value-1');
+    await sink.set('some-key-3', 'value-1');
+    expect(await sink.dir('/')).toMatchSnapshot();
+});
+
+test('dir() - should list 3 files from a sub directory', async () => {
+    const sink = new Sink();
+
+    await sink.set('some-key-1', 'value-1');
+    await sink.set('some-key-2', 'value-1');
+    await sink.set('another/some-key-3', 'value-1');
+    await sink.set('dir/sub/some-key-1', 'wanted-1');
+    await sink.set('dir/sub/some-key-2', 'wanted-2');
+    await sink.set('dir/sub/some-key-3', 'wanted-3');
+    expect(await sink.dir('/dir/sub')).toMatchSnapshot();
+});
+
+test('dir() - should error when folder does not exist', async () => {
+    expect.assertions(1);
+    const sink = new Sink();
+
+    await sink.set('some-key-1', 'value-1');
+    await sink.set('some-key-2', 'value-1');
+    await sink.set('another/some-key-3', 'value-1');
+    await sink.set('dir/sub/some-key-1', 'wanted-1');
+    try {
+        await sink.dir('/dir/missing');
+    } catch (e) {
+        expect(e.message).toMatchSnapshot();
+    }
+});
+
 test('.writer() - no value for "type" argument - should throw', () => {
     const sink = new Sink();
     expect(() => {
