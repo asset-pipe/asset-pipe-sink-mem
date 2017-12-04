@@ -2,7 +2,7 @@
 
 exports[`.set() - should not set value if missing value 1`] = `[AssertionError [ERR_ASSERTION]: "fileContent" is missing]`;
 
-exports[`.set() - should not set value if missing value 2`] = `[Error: No file with name "some-key-1"]`;
+exports[`.set() - should not set value if missing value 2`] = `[Error: No file could be located with name "some-key-1".]`;
 
 exports[`dir() - should error when folder does not exist 1`] = `"Missing folder with name \\"/dir/missing\\" or empty result"`;
 
