@@ -16,7 +16,8 @@
     "Trygve Lie (http://www.trygve-lie.com/)",
     "Greenkeeper (http://greenkeeper.io/)",
     "Richard Walker (https://github.com/digitalsadhu)",
-    "Sveinung Røsaker (https://github.com/sveisvei)"
+    "Sveinung Røsaker (https://github.com/sveisvei)",
+    "Simen Bekkhus (https://github.com/SimenB)"
   ],
   "engines": {
     "node": ">=8"
@@ -47,10 +48,12 @@
     "lint-staged": "^6.0.0",
     "prettier": "^1.9.2",
     "projectz": "^1.4.0",
-    "semantic-release": "^12.2.2"
+    "semantic-release": "^12.2.2",
+    "travis-deploy-once": "^4.3.1"
   },
   "scripts": {
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once",
     "lint": "eslint .",
     "test": "jest --coverage",
     "lint:format": "eslint --fix .",
