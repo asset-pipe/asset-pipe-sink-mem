@@ -34,7 +34,7 @@
     "asset-pipe-common": "^1.0.0-beta.6",
     "boom": "^7.1.1",
     "concat-stream": "^1.6.0",
-    "readable-stream": "^2.3.3"
+    "readable-stream": "^3.0.0"
   },
   "devDependencies": {
     "commitizen": "^2.9.6",
